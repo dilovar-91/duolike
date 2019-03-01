@@ -1,2 +1,0 @@
-# duolike
-Education app
