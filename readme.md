@@ -3,6 +3,7 @@
 Duolike is a web application like duolingo for learning programming and languages. This project built with Laravel (Backend) and Vue.js + Nuxt.js(Frontend). Main features of this application :
 
 - [Social auth with JWT];
+- [Vuetify theme];
 - [Profile component];
 - [Home component (List of lessons and categories)];
 - [Learn component];
