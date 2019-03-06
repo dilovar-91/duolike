@@ -16,7 +16,7 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
-  plugins: ['~/plugins/vuetify.js'],
+  plugins: ['~/plugins/vuetify.js', '~plugins/user.js'],
   css: ['~/assets/style/app.styl'],
   /*
   ** Customize the progress bar color
@@ -25,6 +25,21 @@ module.exports = {
   /*
   ** Build configuration
   */
+  modules: ['@nuxtjs/auth', '@nuxtjs/axios'],
+  axios: {
+    baseURL: 'http://duolike/api'
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: 'login', method: 'post', propertyName: 'meta.token' },
+          user: { url: 'user', method: 'get', propertyName: 'data' },
+          logout: { url: 'logout', method: 'post' }
+        }
+      }
+    }
+  },
   build: {
     transpile: [/^vuetify/],
     plugins: [
